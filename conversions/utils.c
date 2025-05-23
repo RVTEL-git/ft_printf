@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 15:43:22 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/22 18:12:51 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:09:53 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	get_size(long nb)
 		n = n / 10;
 		size++;
 	}
-	retrun (size + 1);
+	return (size + 1);
 }
 
 void	print_unsigned(unsigned int nb)
@@ -47,5 +47,5 @@ void	ft_putnbr_base(int nbr, int base_len, char *base)
 {
 	if (nbr >= base_len)
 		ft_putnbr_base((nbr / base_len), base_len, base);
-	ft_putchar(base[nbr % base_len]);
+	ft_putchar_fd(base[nbr % base_len], 1);
 }

@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_alpha.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 11:08:16 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/23 20:07:49 by barmarti         ###   ########.fr       */
+/*   Created: 2025/05/23 16:36:28 by barmarti          #+#    #+#             */
+/*   Updated: 2025/05/23 20:06:33 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	print_string(char *str)
 {
-	int		i;
-	int		count;
-	va_list	parameters_infos;
+	int	size;
 
-	if (!format)
-		return (0);
-	va_start(parameters_infos, format);
-	count = 0;
-	i = 0;
-	while (format[i])
-	{
-		if (format[i] == 37 && format[i + 1])
-		{
-			count = count + handle_convertion(format[i + 1], parameters_infos);
-			i = i +2;
-		}
-		ft_putchar_fd(format[i], 1);
-		i++;
-		count++;
-	}
-	va_end(parameters_infos);
-	return (count);
+	size = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	return (size);
+}
+
+int	print_char(char c)
+{
+	ft_putchar_fd(c, 1);
+	return (1);
+}
+
+int	print_ptr(void *ptr)
+{
+	uintptr_t	n;
+	int			size;
+
+	n = (uintptr_t)ptr;
+	size = 2 + get_size(n);
+	ft_putstr_fd("0x", 1);
+	ft_putnbr_base(n, 16, "0123456789acdef");
+	return (size);
 }

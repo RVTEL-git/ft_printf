@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_*.c                                          :+:      :+:    :+:   */
+/*   print_numerals.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 12:05:43 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/22 18:15:05 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/05/23 20:11:00 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_num(va_list args)
+int	print_num(int i)
 {
 	int	size;
 
-	size = get_size(va_arg(args, unsigned int));
-	ft_putnbr_fd(va_arg(args, int), 1);
+	size = get_size(i);
+	ft_putnbr_fd(i, 1);
 	return (size);
 }
 
-int	print_unit(va_list args)
+int	print_unit(unsigned int uni)
 {
 	int	size;
 
-	size = get_size(va_arg(args, unsigned int));
-	print_unsigned(va_arg(args, unsigned int));
+	size = get_size(uni);
+	print_unsigned(uni);
 	return (size);
 }
 
-int	print_x_lc(va_list args)
+int	print_x_lc(int x_lc)
 {
 	int	size;
 
-	size = get_size(va_arg(args, int));
-	ft_putnbr_base(va_arg(args, int), 16, "0123456789abcdef");
+	size = get_size(x_lc);
+	ft_putnbr_base(x_lc, 16, "0123456789abcdef");
 	return (size);
 }
 
-int	print_x_uc(va_list args)
+int	print_x_uc(int x_uc)
 {
 	int	size;
 
-	size = get_size(va_arg(args, int));
-	ft_putnbr_base(va_arg(args, int), 16, "0123456789ABCDEF");
+	size = get_size(x_uc);
+	ft_putnbr_base(x_uc, 16, "0123456789ABCDEF");
 	return (size);
 }
