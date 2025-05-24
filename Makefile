@@ -18,7 +18,7 @@ LIBFT_DIR = libft
 
 SRCS = \
  $(SRC_DIR)/ft_printf.c \
- $(SRC_DIR)/dispatcher.c
+ $(SRC_DIR)/dispatcher.c 
  
 CONVERSIONS = \
  $(CONV_DIR)/print_alpha.c \
@@ -30,7 +30,7 @@ OBJS = $(SRCS:.c=.o) $(CONVERSIONS:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -g -I.
 AR = ar rcs
 
 all: $(NAME)

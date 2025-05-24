@@ -6,22 +6,25 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 12:05:43 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/23 20:11:00 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:01:23 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	print_num(int i)
+int	print_num(int	i)
 {
 	int	size;
 
+
+	printf("print_num received: %d\n", i);
 	size = get_size(i);
 	ft_putnbr_fd(i, 1);
 	return (size);
 }
 
-int	print_unit(unsigned int uni)
+int	print_unit(unsigned int	uni)
 {
 	int	size;
 
@@ -30,7 +33,7 @@ int	print_unit(unsigned int uni)
 	return (size);
 }
 
-int	print_x_lc(int x_lc)
+int	print_x_lc(int	x_lc)
 {
 	int	size;
 
@@ -39,7 +42,7 @@ int	print_x_lc(int x_lc)
 	return (size);
 }
 
-int	print_x_uc(int x_uc)
+int	print_x_uc(int	x_uc)
 {
 	int	size;
 

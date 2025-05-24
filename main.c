@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 19:24:20 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/23 20:08:07 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/05/24 15:33:28 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 
 int main(void)
 {
-    int len1, len2;
-
-    // Test simple de texte brut
+    //int len1, len2;
+    
+    ft_printf("\n");
+    ft_printf("Test :\n%d %i\n", -123, -456);
+    
+    /*// Test simple de texte brut
     len1 = ft_printf("(mine) Hello, world!\n");
     len2 = printf("(real) Hello, world!\n");
     printf("mine returned: %d | real returned: %d\n\n", len1, len2);
 
     // Test %c
-    len1 = ft_printf("(mine) Character: %c\n", 'A');
-    len2 = printf("(real) Character: %c\n", 'A');
+    len1 = ft_printf("(mine) Character: %c ||  %c\n", 'A', 'C');
+    len2 = printf("(real) Character: %c ||  %c\n", 'A', 'C');
     printf("mine returned: %d | real returned: %d\n\n", len1, len2);
 
     // Test %s
@@ -43,8 +46,8 @@ int main(void)
     printf("ft_printf returned: %d | real returned: %d\n\n", len1, len2);
 
     // Test %x et %X
-    len1 = ft_printf("(mine) Hex lowercase: %x | (mine) Hex uppercase: %X\n", 48879, 48879);
-    len2 = printf("(real) Hex lowercase: %x | (real) Hex uppercase: %X\n", 48879, 48879);
+    len1 = ft_printf("(mine) Hex lowercase: %x | (mine) Hex uppercase: %X\n", 48879, 48878);
+    len2 = printf("(real) Hex lowercase: %x | (real) Hex uppercase: %X\n", 48879, 48878);
     printf("mine returned: %d | real returned: %d\n\n", len1, len2);
 
     // Test %p
@@ -56,7 +59,7 @@ int main(void)
     // Test %%
     len1 = ft_printf("(mine) Percent sign: %%\n");
     len2 = printf("(real) Percent sign: %%\n");
-    printf("mine returned: %d | real returned: %d\n\n", len1, len2);
+    printf("mine returned: %d | real returned: %d\n\n", len1, len2);*/
 
-    return 0;
+    return (5);
 }
