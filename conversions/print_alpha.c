@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 16:36:28 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/24 16:59:53 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:03:24 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,18 @@
 
 int	print_string(char *str)
 {
-	int	size;
-	
-	size = ft_strlen(str);
-	ft_putstr_fd(str, 1);
-	return (size);
+	char	*dup;
+	int		i;
+
+	dup = str;
+	if (!dup)
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
+	i = ft_strlen(dup);
+	ft_putstr_fd(dup, 1);
+	return (i);
 }
 
 int	print_char(int c)
@@ -29,12 +36,17 @@ int	print_char(int c)
 
 int	print_ptr(void	*ptr)
 {
-	uintptr_t	n;
 	int			size;
+	uintptr_t	adrr;
 
-	n = (uintptr_t)ptr;
-	size = 2 + get_size(n);
+	if (ptr == NULL)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
+	adrr = (uintptr_t)ptr;
+	size = ptr_size(adrr);
 	ft_putstr_fd("0x", 1);
-	ft_putnbr_base(n, 16, "0123456789acdef");
-	return (size);
+	print_adress(adrr);
+	return (size + 2);
 }

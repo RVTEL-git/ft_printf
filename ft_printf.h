@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 10:40:20 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/24 17:10:06 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:43:30 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@
 
 # include "libft/libft.h"
 
-int		ft_printf(const char *format, ...);
 int		handle_convertion(char specifier, va_list args);
-int		get_size(long nb);
-int		print_num(int	i);
+int		print_hex(unsigned int nbr, char c);
+int		ft_printf(const char *format, ...);
+int		print_x(int x, char specifier);
 int		print_unit(unsigned int uni);
-int		print_x_lc(int x_lc);
-int		print_x_uc(int x_uc);
+int		get_size(long nb, long base);
+int		ptr_size(uintptr_t ptr);
 int		print_string(char *str);
 int		print_ptr(void *ptr);
 int		print_char(int c);
+int		print_num(int i);
 
 void	print_unsigned(unsigned int nb);
-void	ft_putnbr_base(int nbr, int base_len, char *base);
+void	print_adress(uintptr_t adress);
 
 #endif
